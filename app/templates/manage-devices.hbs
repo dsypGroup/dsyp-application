@@ -1,0 +1,61 @@
+<div>
+    <div>
+        <div class="main-content">
+          {{#widget-header}}{{/widget-header}}
+            <div class="page-wrapper col-xs-12 col-sm-12 col-md-12 col-lg-12 sidebar-closed">
+              {{#side-bar}}{{/side-bar}}
+                <div class="body hide-content full-width">
+                    <!--<div class="table-responsive">-->
+                    <!--<div class="row">-->
+                    <!--<div class="table-cell col-xs-2 col-sm-2 col-md-2 col-lg-2">vfjdbvl</div>-->
+                    <!--<div class="table-cell col-xs-4 col-sm-4 col-md-4 col-lg-4">123</div>-->
+                    <!--<div class="table-cell col-xs-2 col-sm-2 col-md-2 col-lg-2">vjhv</div>-->
+                    <!--<div class="table-cell col-xs-4 col-sm-4 col-md-4 col-lg-4">212</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <table class="table-responsive">
+                        {{#each model as |device|}}
+                          {{#if device.isDeviceOn}}
+                              <tr>
+                                  <td class="status">
+                                      <button {{action "onRemoveBtnClicked"}}><i class="fa fa-minus"></i></button>
+                                  </td>
+                                  <td class="connected-devices">{{device.deviceName}}</td>
+                                  <td class="connected">{{device.deviceStatus}}</td>
+                                  <td class="connected-devices">{{device.deviceGroup}}</td>
+                                  <td class="connected-devices">{{device.unitLimit}}</td>
+                                  <td class="connected-devices">{{device.deviceUnits}}</td>
+                                  <td><button class="btn-manage" {{action "onManageBtnClicked" device}}>Manage</button></td>
+                              </tr>
+                          {{else}}
+                              <tr>
+                                  <td class="status">
+                                      <button {{action "onRemoveBtnClicked" device}}><i class="fa fa-minus"></i></button>
+                                  </td>
+                                  <td class="connected-devices">{{device.deviceName}}</td>
+                                  <td class="not-connected">{{device.deviceStatus}}</td>
+                                  <td class="connected-devices">{{device.deviceGroup}}</td>
+                                  <td class="connected-devices">{{device.unitLimit}}</td>
+                                  <td class="connected-devices">{{device.deviceUnits}}</td>
+                                  <td><button class="btn-manage" {{action "onManageBtnClicked" device}}>Manage</button></td>
+                              </tr>
+                          {{/if}}
+
+                            <div id="{{device.deviceName}}" style="display:none">
+                                <div class="full-width">
+                               <tr>
+                                <td>Manage {{device.deviceName}}</td>
+                                <td><button {{action 'onDeviceOnBtnClicked' device}} style="background: green; color: whitesmoke">On</button></td>
+                                <td><button {{action 'onDeviceOffBtnClicked' device}} style="background: red;color: whitesmoke">Off</button></td>
+                               </tr>
+                                </div>
+                            </div>
+                        {{/each}}
+                    </table>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

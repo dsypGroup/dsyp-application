@@ -1,0 +1,135 @@
+<div>
+    <div>
+        <div class="main-content">
+          {{#widget-header}}{{/widget-header}}
+          <div class="page-wrapper col-xs-12 col-sm-12 col-md-12 col-lg-12 sidebar-closed">
+              {{#side-bar}}{{/side-bar}}
+                <div class="body hide-content">
+                    <div class="layout-container about-us-header">Manage Tasks</div>
+                    <!--<div class="table-responsive">-->
+                        <!--<div class="row">-->
+                            <!--<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 table-cell">gfkyuj</div>-->
+                            <!--<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 table-cell">2132</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div class="full-width pos-rel">
+                        <div class="layout-container pad-l-tb full-width">
+                            <div class="layout-container pad-m-tb">
+                                <div class="layout-col connected-devices">Automated</div>
+                                <div class="layout-col-24"></div>
+                                <div class="layout-col pad-s-lr pad-s-tb" {{action 'onTurnOffClicked'}}>
+                                    <span class="remove pad-s-lr pad-s-tb"><i class="fa fa-minus"></i></span>
+                                </div>
+                                <div class="layout-col pad-s-lr  pad-s-tb" {{action 'onTurnOnClicked'}}>
+                                    <span class="keep pad-s-lr pad-s-tb"><i class="fa fa-plus"></i></span>
+                                </div>
+                            </div>
+
+                            <div class="layout-container widget-hline"></div>
+
+                            <div class="layout-container pad-m-tb">
+                                <div class="layout-col connected-devices">Manually On/Off</div>
+                                <div class="layout-col-24"></div>
+                                <div class="layout-col pad-s-lr pad-s-tb" {{action 'onTurnOffClicked'}}>
+                                    <span class="remove pad-s-lr pad-s-tb"><i class="fa fa-minus"></i></span>
+                                </div>
+                                <div class="layout-col pad-s-lr pad-s-tb" {{action 'onTurnOnClicked'}}>
+                                    <span class="keep pad-s-lr pad-s-tb"><i class="fa fa-plus"></i></span>
+                                </div>
+                            </div>
+
+                            <div class="layout-container widget-hline"></div>
+
+                            <div class="layout-containe pad-l-tb">
+                                <div class="layout-col bold">Units Consumed for Month</div>
+                                <div class="layout-col-24"></div>
+                                <div class="layout-col">
+                                    <span></span>
+                                </div>
+                            </div>
+
+                            <div class="layout-container widget-hline"></div>
+
+                            <div class="layout-container pad-l-tb">
+                                <div class="layout-col bold">Calculate Bill for Month</div>
+                                <div class="layout-col-24"></div>
+                                <div class="layout-col">
+                                    <button type="submit" class="btn-default" {{action "onCalculateBillBtnClicked"}}>Calculate Bill</button>
+                                </div>
+                            </div>
+                          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                              <table class="table-responsive">
+                              {{#if isCheckBillClicked}}
+                                  <tr>
+                                      <td class="col-xs-4 col-sm-4 col-md-4 col-lg-4 connected-devices">Device</td>
+                                      <td class="col-xs-4 col-sm-4 col-md-4 col-lg-4 connected-devices">Used Units</td>
+                                      <td class="col-xs-4 col-sm-4 col-md-4 col-lg-4 connected-devices">Bill Per Device</td>
+                                  </tr>
+                              {{#each model as |device|}}
+                                      <tr>
+                                          <td class="col-xs-4 col-sm-4 col-md-4 col-lg-4 connected-devices">{{device.deviceName}}</td>
+                                          <td class="col-xs-4 col-sm-4 col-md-4 col-lg-4 connected-devices">{{device.deviceUnits}}</td>
+                                          <td class="col-xs-4 col-sm-4 col-md-4 col-lg-4 connected-devices">{{device.deviceUnits}}*60</td>
+                                          <!--<td><button class="btn-manage" {{!action "onCalculateBillBtnClicked" device}}>Check Bill</button></td>-->
+                                      </tr>
+                              {{/each}}
+                              {{else}}
+                                <div>No Device is Used for this month</div>
+                            {{/if}}
+                          </table>
+                          </div>
+                            <div class="layout-container widget-hline"></div>
+
+
+                          <div id="turnOnPopUp" class="layout-container display-none">
+                              <div id="cancelAction" class="layout-container pos-abs pop-up-css">
+                          {{#each model as |device|}}
+                            {{#if device.isDeviceAdded}}
+                                <div class="layout-container">
+                                    <div class="layout-col pad-m-tb connected-devices">{{device.deviceName}}</div>
+                                    <div class="layout-col-24"></div>
+                                    <div class="layout-col pad-s-tb connected">{{device.deviceAdded}}</div>
+                                </div>
+                            {{/if}}
+                                <div class="layout-container widget-hline"></div>
+                              <div id="{{device.deviceName}}">
+                                  <div class="layout-container pad-m-tb">
+                                  <div class="layout-col"><button {{action 'onDeviceOnBtnClicked' device}} style="background: green; color: whitesmoke">Add</button></div>
+                                  <div class="layout-col"><button disabled={{isDeviceAdded}} {{action 'onDeviceOffBtnClicked' device}} style="background: red;color: whitesmoke">Remove</button></div>
+                                  </div>
+                              </div>
+                          {{/each}}
+                                  <div class="layout-container"><button {{action 'cancel'}}>Cancel</button></div>
+                              </div>
+                          </div>
+
+
+
+                            <div id="turnOffPopUp" class="layout-container display-none">
+                                <div id="closeAction" class="layout-container pos-abs pop-up-css">
+                              {{#each model as |device|}}
+                                {{#unless device.isDeviceAdded}}
+                                    <div class="layout-container">
+                                        <div class="layout-col pad-m-tb connected-devices">{{device.deviceName}}</div>
+                                        <div class="layout-col-24"></div>
+                                        <div class="layout-col pad-s-tb not-connected">{{device.deviceAdded}}</div>
+                                    </div>
+                                <div class="layout-container widget-hline"></div>
+                                  <div id="{{device.deviceName}}">
+                                      <div class="layout-container pad-m-tb">
+                                      <div class="layout-col"><button disabled={{isDeviceAdded}} {{action 'onDeviceOnBtnClicked' device}} style="background: green; color: whitesmoke">Add</button></div>
+                                      <div class="layout-col"><button {{action 'onDeviceOffBtnClicked' device}} style="background: red;color: whitesmoke">Remove</button></div>
+                                    </div>
+                                  </div>
+                                  {{/unless}}
+                              {{/each}}
+                                    <div class="layout-container"><button {{action 'close'}}>Cancel</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

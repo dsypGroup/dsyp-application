@@ -1,0 +1,42 @@
+<div>
+    <div>
+        <div class="main-content">
+          {{#widget-header}}{{/widget-header}}
+            <div class="page-wrapper col-xs-12 col-sm-12 col-md-12 col-lg-12 sidebar-closed">
+              {{#side-bar}}{{/side-bar}}
+                <div class="body hide-content">
+                    <div class="table-responsive">
+                        <table class="display-devices">
+                            <tr class="table-heading">
+                                <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">Device</th>
+                                <th class="col-xs-1 col-sm-2 col-md-2 col-lg-2">Status</th>
+                                <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">Group</th>
+                                <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">Unit Limit</th>
+                                <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">Used Units</th>
+                            </tr>
+                          {{#each model as |device|}}
+                            {{#if device.isDeviceOn}}
+                                <tr>
+                                    <td class="connected-devices col-xs-2 col-sm-2 col-md-2 col-lg-2">{{device.deviceName}}</td>
+                                    <td class="connected">{{device.deviceStatus}}</td>
+                                    <td class="connected-devices col-xs-2 col-sm-2 col-md-2 col-lg-2">{{device.deviceGroup}}</td>
+                                    <td class="connected-devices col-xs-2 col-sm-2 col-md-2 col-lg-2">{{device.unitLimit}}</td>
+                                    <td class="connected-devices col-xs-2 col-sm-2 col-md-2 col-lg-2">{{device.deviceUnits}}</td>
+                                </tr>
+                            {{else}}
+                                <tr>
+                                    <td class="connected-devices col-xs-2 col-sm-2 col-md-2 col-lg-2">{{device.deviceName}}</td>
+                                    <td class="not-connected">{{device.deviceStatus}}</td>
+                                    <td class="connected-devices col-xs-2 col-sm-2 col-md-2 col-lg-2">{{device.deviceGroup}}</td>
+                                    <td class="connected-devices col-xs-2 col-sm-2 col-md-2 col-lg-2">{{device.unitLimit}}</td>
+                                    <td class="connected-devices col-xs-2 col-sm-2 col-md-2 col-lg-2">{{device.deviceUnits}}</td>
+                                </tr>
+                            {{/if}}
+                          {{/each}}
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

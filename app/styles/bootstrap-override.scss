@@ -1,0 +1,293 @@
+
+@import 'common-variables';
+
+// bootstrap override
+//.ar .datepicker-dropdown.dropdown-menu {
+//  right: auto;
+//  left: auto;
+//}
+
+.ar .datepicker-orient-right {
+  display: block !important;
+  direction: ltr !important;
+  float: right !important;
+  left: 0 !important;
+  right: auto !important;
+}
+.ar .datepicker-orient-right .datepicker-days {
+  direction: rtl;
+}
+.ar .datepicker-orient-right:after,
+.ar .datepicker-orient-right:before {
+  right: 70%;
+}
+
+.tooltip-inner {
+  font-size: 13px;
+  max-width: 250px;
+}
+
+.col-5{ position: relative; min-height: 1px; padding-right: 15px; padding-left: 15px;
+}
+
+@media (max-width: 768px) {
+  .col-5 { width: 100%; float: left; }
+}
+@media (min-width: 992px) {
+  .col-5 { width: 20%; float: left; }
+}
+@media (min-width: 1200px) {
+  .col-5 { width: 20%; float: left; }
+}
+
+@media (max-width: 768px) {
+  .ar .col-5 { width: 100%; float: right; }
+}
+@media (min-width: 992px) {
+  .ar .col-5 { width: 20%; float: right; }
+}
+@media (min-width: 1200px) {
+  .ar .col-5 { width: 20%; float: right; }
+}
+
+/* PDF Customized Viewports */
+
+/* Al Rajhi extra small medium queries - xsm */
+
+@media print {
+
+
+.col-pdf-1, .col-pdf-2, .col-pdf-3, .col-pdf-4,
+.col-pdf-5, .col-pdf-6, .col-pdf-7, .col-pdf-8,
+.col-pdf-9, .col-pdf-10, .col-pdf-11, .col-pdf-12,
+.ar .col-pdf-1, .ar .col-pdf-2, .ar .col-pdf-3, .ar .col-pdf-4,
+.ar .col-pdf-5, .ar .col-pdf-6, .ar .col-pdf-7, .ar .col-pdf-8,
+.ar .col-pdf-9, .ar .col-pdf-10, .ar .col-pdf-11, .ar .col-pdf-12{
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+}
+
+  @media (max-width: 600px) {
+    .col-pdf-1,
+    .col-pdf-2,
+    .col-pdf-3,
+    .col-pdf-4,
+    .col-pdf-5,
+    .col-pdf-6,
+    .col-pdf-7,
+    .col-pdf-8,
+    .col-pdf-9,
+    .col-pdf-10,
+    .col-pdf-11 {
+      float: left;
+    }
+    .ar .col-pdf-1,
+    .ar .col-pdf-2,
+    .ar .col-pdf-3,
+    .ar .col-pdf-4,
+    .ar .col-pdf-5,
+    .ar .col-pdf-6,
+    .ar .col-pdf-7,
+    .ar .col-pdf-8,
+    .ar .col-pdf-9,
+    .ar .col-pdf-10,
+    .ar .col-pdf-11 {
+      float: right;
+    }
+
+    .col-pdf-1,
+    .ar .col-pdf-1 {
+      width: 8.333333333333332%;
+    }
+
+    .col-pdf-2,
+    .ar .col-pdf-2 {
+      width: 16.666666666666664%;
+    }
+
+    .col-pdf-3,
+    .ar .col-pdf-3 {
+      width: 25%;
+    }
+
+    .col-pdf-4,
+    .ar .col-pdf-4 {
+      width: 33.33333333333333%;
+    }
+
+    .col-pdf-5,
+    .ar .col-pdf-5 {
+      width: 41.66666666666667%;
+    }
+
+    .col-pdf-6,
+    .ar .col-pdf-6 {
+      width: 50%;
+    }
+
+    .col-pdf-7,
+    .ar .col-pdf-7 {
+      width: 58.333333333333336%;
+    }
+
+    .col-pdf-8,
+    .ar .col-pdf-8 {
+      width: 66.66666666666666%;
+    }
+
+    .col-pdf-9,
+    .ar .col-pdf-9 {
+      width: 75%;
+    }
+
+    .col-pdf-10,
+    .ar .col-pdf-10 {
+      width: 83.33333333333334%;
+    }
+
+    .col-pdf-11,
+    .ar .col-pdf-11 {
+      width: 91.66666666666666%;
+    }
+
+    .col-pdf-12,
+    .ar .col-pdf-12 {
+      width: 100%;
+    }
+
+    .col-pdf-push-1 {
+      left: 8.333333333333332%;
+    }
+
+    .col-pdf-push-2 {
+      left: 16.666666666666664%;
+    }
+
+    .col-pdf-push-3 {
+      left: 25%;
+    }
+
+    .col-pdf-push-4 {
+      left: 33.33333333333333%;
+    }
+
+    .col-pdf-push-5 {
+      left: 41.66666666666667%;
+    }
+
+    .col-pdf-push-6 {
+      left: 50%;
+    }
+
+    .col-pdf-push-7 {
+      left: 58.333333333333336%;
+    }
+
+    .col-pdf-push-8 {
+      left: 66.66666666666666%;
+    }
+
+    .col-pdf-push-9 {
+      left: 75%;
+    }
+
+    .col-pdf-push-10 {
+      left: 83.33333333333334%;
+    }
+
+    .col-pdf-push-11 {
+      left: 91.66666666666666%;
+    }
+
+    .col-pdf-pull-1 {
+      right: 8.333333333333332%;
+    }
+
+    .col-pdf-pull-2 {
+      right: 16.666666666666664%;
+    }
+
+    .col-pdf-pull-3 {
+      right: 25%;
+    }
+
+    .col-pdf-pull-4 {
+      right: 33.33333333333333%;
+    }
+
+    .col-pdf-pull-5 {
+      right: 41.66666666666667%;
+    }
+
+    .col-pdf-pull-6 {
+      right: 50%;
+    }
+
+    .col-pdf-pull-7 {
+      right: 58.333333333333336%;
+    }
+
+    .col-pdf-pull-8 {
+      right: 66.66666666666666%;
+    }
+
+    .col-pdf-pull-9 {
+      right: 75%;
+    }
+
+    .col-pdf-pull-10 {
+      right: 83.33333333333334%;
+    }
+
+    .col-pdf-pull-11 {
+      right: 91.66666666666666%;
+    }
+
+    .col-pdf-offset-1 {
+      margin-left: 8.333333333333332%;
+    }
+
+    .col-pdf-offset-2 {
+      margin-left: 16.666666666666664%;
+    }
+
+    .col-pdf-offset-3 {
+      margin-left: 25%;
+    }
+
+    .col-pdf-offset-4 {
+      margin-left: 33.33333333333333%;
+    }
+
+    .col-pdf-offset-5 {
+      margin-left: 41.66666666666667%;
+    }
+
+    .col-pdf-offset-6 {
+      margin-left: 50%;
+    }
+
+    .col-pdf-offset-7 {
+      margin-left: 58.333333333333336%;
+    }
+
+    .col-pdf-offset-8 {
+      margin-left: 66.66666666666666%;
+    }
+
+    .col-pdf-offset-9 {
+      margin-left: 75%;
+    }
+
+    .col-pdf-offset-10 {
+      margin-left: 83.33333333333334%;
+    }
+
+    .col-pdf-offset-11 {
+      margin-left: 91.66666666666666%;
+    }
+  }
+
+}

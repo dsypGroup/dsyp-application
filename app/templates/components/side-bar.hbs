@@ -1,0 +1,21 @@
+{{!yield}}
+<div class="side-bar" xmlns="http://www.w3.org/1999/html">
+    <span class="side-header">
+        <div class="link">
+            <a class="menuToggle"><i class="fa fa-bars" {{action "onToggleBtnClick"}}></i></a>
+        </div>
+        <div class="logo"><img src="assets/images/logo.png"></div>
+  </span>
+    <div class="sideNav">
+        <ul class="menu">
+            <li>{{#link-to 'display-devices'}}<i class="fa fa-lightbulb-o icon"></i>Display Devices{{/link-to}}</li>
+            <li>{{#link-to 'manage-devices'}}<i class="fa fa-gears icon"></i>Manage Devices{{/link-to}}</li>
+            <li>{{#link-to 'add-devices'}}<i class="fa fa-plus-circle icon"></i>Add Devices{{/link-to}}</li>
+            <li>{{#link-to 'manage-tasks'}}<i class="fa fa-calendar-check-o icon"></i>Manage Tasks{{/link-to}}</li>
+            <li>{{#link-to 'notification-settings'}}<i class="fa fa-bell icon"></i>Notification Settings{{/link-to}}</li>
+            <li>{{#link-to 'about-us'}}<i class="fa fa-info-circle icon"></i>About Us{{/link-to}}</li>
+            <li>{{#link-to 'help'}}<i class="fa fa-question-circle-o icon"></i>Help{{/link-to}}</li>
+            <li>{{#link-to 'account-settings'}}<i class="fa fa-key icon"></i>Account Settings{{/link-to}}</li>
+        </ul>
+    </div>
+</div>

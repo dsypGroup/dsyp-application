@@ -1,0 +1,34 @@
+{{!yield}}
+
+{{#if isHomeViewEnabled}}
+    <div>
+        {{#if isDefaultLandingPage}}
+            <div>
+                <div>
+                    <div class="main-content">
+                      {{#widget-header}}{{/widget-header}}
+                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 page-wrapper sidebar-closed">
+                          {{#side-bar}}{{/side-bar}}
+                            <div class="body hide-content">
+                                <div class="row">
+                                <div>Connect your device</div>
+                                <button  {{action "clickConnectBtn"}}> Connect </button>
+                                </div>
+                                <div class="row">
+                                    <div class="box">
+                                        <div class="comp"></div>
+                                        <div class="loader"></div>
+                                        <div class="con"></div>
+                                        <div class="byte"></div>
+                                        <div class="server"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{/if}}
+    </div>
+{{/if}}

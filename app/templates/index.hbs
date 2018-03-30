@@ -1,0 +1,66 @@
+<div>{{#home-view isHomeViewEnabled=isAuthenticated}}{{/home-view}}</div>
+
+{{#unless isAuthenticated}}
+    <div>
+        <div class="content-wrapper">
+
+            <div class="page-content-floater">
+                <!--<section class="page-content-wrapper">-->
+
+                    <div class="page-content">
+                        <!--<div class="row top-sp-md">-->
+                            <!--<div class="col-md-10 middle">-->
+
+                                <div class="panel panel-login">
+                                    <img class="login-logo" src="assets/images/logo_2.png">
+                                    <!-- <div class="panel-heading">Login</div> -->
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="">
+                                                <span class="form-group">
+                                                    <span>
+                                                        {{input type="text"  placeholder="Username" value=uname id="txtUsername" enter="clickLoginBtn" class="form-control"}}
+                                                    </span>
+                                                </span>
+                                                    <div class="form-group">
+                                                    <span>
+                                                        {{input type="password" placeholder="Password" value=pwd id="txtPassword" enter="clickLoginBtn" class="form-control"}}
+                                                    </span>
+                                                </div>
+                                                <div class="login-error-msg error-message" id="loginMsg">
+                                                    <!--<span style="color: white"></span>-->
+                                                </div>
+                                                <div class="checkbox">
+                                                    <input class="input-checkbox" id="ckb1" type="checkbox" name="remember-me">
+                                                    <label class="label-checkbox" for="ckb1">
+                                                    Remember me
+                                                    </label>
+                                                </div>
+                                                <div class="login">
+                                                    <button class="btn-login" {{action "clickLoginBtn" this}}> Login
+                                                    </button>
+                                                </div>
+                                                <div class="text-center">
+                                                    <a class="forgot" href="#">Forgot Password</a>
+                                                </div>
+                                                <div class="sign-up">
+                                                    <a class="" href="#">Sign-up</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                    <div class="footer">
+
+                    </div>
+                <!--</section>-->
+            </div>
+        </div>
+
+    </div>
+
+{{/unless}}

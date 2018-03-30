@@ -1,0 +1,56 @@
+<div>
+    <div>
+        <div class="main-content">
+          {{#widget-header}}{{/widget-header}}
+            <div class="page-wrapper col-xs-12 col-sm-12 col-md-12 col-lg-12 sidebar-closed">
+              {{#side-bar}}{{/side-bar}}
+                <div class="body hide-content">
+                    <div class="layout-conatiner about-us-header">Account Settings</div>
+                    <div class="layout-container header-font pad-l-tb bold">Change your Password Here</div>
+                    <div class="layout-container widget-hline"></div>
+
+                    <div class="layout-container full-width">
+                        <form class="pad-l-lr pad-l-tb">
+                            <div class="layout-container full-width">
+                            <div class="layout-container">User Name</div>
+                            <div class="layout-container">
+                              {{input type="text" max-length="15" class="input-css"}}
+                            </div>
+                            </div>
+
+                            <div class="layout-container pad-m-tb full-width">
+                                <div class="layout-container">Current Password</div>
+                                <div class="layout-container">
+                                  {{input type="password" max-length="15" class="input-css"}}
+                                </div>
+                            </div>
+
+                            <div class="layout-container pad-m-tb full-width">
+                                <div class="layout-container">New Password</div>
+                                <div class="layout-container">
+                                  {{input type="password" max-length="15" class="input-css"}}
+                                </div>
+                            </div>
+
+                            <div class="layout-container pad-m-tb full-width">
+                                <div class="layout-container">Confirm New Password</div>
+                                <div class="layout-container">
+                                  {{input type="password" max-length="15" class="input-css"}}
+                                </div>
+                            </div>
+
+                            <div class="layout-container pad-l-tb">
+                                <div class="layout-col">
+                                    <button type="submit" class="btn-default" {{action 'onSaveClicked' device}}>Save</button>
+                                </div>
+                                <div class="layout-col pad-l-lr">
+                                    <button type="reset" class="cancel-btn">Reset</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+{{#if device.deviceStatus}}
+    <tr>
+        <td class="connected-devices">{{device.deviceName}}</td>
+        <td class="connected">{{device.deviceStatus}}</td>
+    </tr>
+{{else}}
+    <tr>
+        <td class="connected-devices">{{device.deviceName}})</td>
+        <td class="not-connected">{{device.deviceStatus}}</td>
+    </tr>
+{{/if}}

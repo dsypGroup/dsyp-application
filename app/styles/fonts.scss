@@ -1,0 +1,59 @@
+// General Fonts for IR Framework
+
+// English
+
+$font-client-en: 'arial';
+$font-client-en-bold: 'arial';
+$font-client-ar: 'Droid Arabic Kufi';
+$font-client-ar-bold: 'Droid Arabic Kufi';
+$font-client-title-en: 'arial';
+$font-client-title-ar: 'Droid Arabic Kufi';
+
+@font-face {
+  font-family: 'Gfh-English-Light';
+  src: url('../assets/ir-fonts/Gfh-English-Light.eot');
+  src: url('../assets/ir-fonts/Gfh-English-Light.eot?#iefix') format('embedded-opentype'),
+  url('../assets/ir-fonts/Gfh-English-Light.woff') format('woff'),
+  url('../assets/ir-fonts/Gfh-English-Light.ttf') format('truetype'),
+  url('../assets/ir-fonts/Gfh-English-Light.svg#Gfh-English-Light') format('svg');
+}
+
+@font-face {
+  font-family: 'Gfh-English-Regular';
+  src: url('../assets/ir-fonts/Gfh-English-Regular.eot');
+  src: url('../assets/ir-fonts/Gfh-English-Regular.eot?#iefix') format('embedded-opentype'),
+  url('../assets/ir-fonts/Gfh-English-Regular.woff') format('woff'),
+  url('../assets/ir-fonts/Gfh-English-Regular.ttf') format('truetype'),
+  url('../assets/ir-fonts/Gfh-English-Regular.otf') format('opentype'),
+  url('../assets/ir-fonts/Gfh-English-Regular.svg#GuardianSans-Regular-Web') format('svg');
+}
+
+@font-face {
+  font-family: 'Gfh-English-Medium';
+  src: url('../assets/ir-fonts/Gfh-English-Medium.eot');
+  src: url('../assets/ir-fonts/Gfh-English-Medium.eot?#iefix') format('embedded-opentype'),
+  url('../assets/ir-fonts/Gfh-English-Medium.woff') format('woff'),
+  url('../assets/ir-fonts/Gfh-English-Medium.ttf') format('truetype'),
+  url('../assets/ir-fonts/Gfh-English-Medium.otf') format('opentype'),
+  url('../assets/ir-fonts/Gfh-English-Medium.svg#Gfh-English-Medium') format('svg');
+}
+
+// Arabic Fonts
+
+@font-face {
+  font-family: 'Gfh-Arabic-Regular';
+  src: url('../assets/ir-fonts/Gfh-Arabic.eot');
+  src: url('../assets/ir-fonts/Gfh-Arabic.eot?#iefix') format('embedded-opentype'),
+  url('../assets/ir-fonts/Gfh-Arabic.woff') format('woff'),
+  url('../assets/ir-fonts/Gfh-Arabic.woff2') format('woff2'),
+  url('../assets/ir-fonts/Gfh-Arabic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Gfh-Arabic-Medium';
+  src: url('../assets/ir-fonts/Gfh-Arabic-Medium.eot');
+  src: url('../assets/ir-fonts/Gfh-Arabic-Medium.eot?#iefix') format('embedded-opentype'),
+  url('../assets/ir-fonts/Gfh-Arabic-Medium.woff') format('woff'),
+  url('../assets/ir-fonts/Gfh-Arabic-Medium.woff2') format('woff2'),
+  url('../assets/ir-fonts/Gfh-Arabic-Medium.ttf') format('truetype');
+}
