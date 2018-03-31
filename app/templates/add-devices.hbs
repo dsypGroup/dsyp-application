@@ -15,6 +15,17 @@
                             {{input type="text" value=nme enter="onclickAddBtn" class="form-control"}}
                           </span>
                       </div>
+                      <div class="form-group">
+                          <span>
+                              <label class="D-name">Device Port</label>
+                              <select class="form-control" value=grp enter="onclickAddBtn" onchange={{action 'onSelectPortType' value="target.value"}}>
+                                  <option value="devicePort1">DevicePort1</option>
+                                  <option value="devicePort2">DevicePort2</option>
+                                  <option value="devicePort3">DevicePort3</option>
+                                  <option value="devicePort4">DevicePort4</option>
+                              </select>
+                          </span>
+                      </div>
                         <div class="form-group">
                           <span>
                               <label class="D-name">Device Group</label>

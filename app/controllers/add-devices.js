@@ -22,7 +22,12 @@ export default Ember.Controller.extend({
         device.grp = "Bulb"
       }
 
+      if (!device.devicePort) {
+        device.devicePort = "devicePort1"
+      }
+
       var newRecord = this.store.createRecord('device', {
+        devicePort: device.devicePort,
         deviceName: device.nme,
         deviceGroup: device.grp,
         deviceStatus: 'Off',
@@ -38,10 +43,16 @@ export default Ember.Controller.extend({
 
     showAddDevicePage: function () {
       this.set('isShowAddDevices', true);
+      this.set('device.grp', '');
+      this.set('device.devicePort', '');
     },
 
     onSelectEntityType: function (grp) {
       this.set('grp', grp);
+    },
+
+    onSelectPortType: function (port) {
+      this.set('devicePort', port);
     }
   }
 });

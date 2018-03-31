@@ -7,6 +7,7 @@ export default DS.Model.extend({
   unitLimit: DS.attr('string'),
   deviceUnits: DS.attr('string'),
   deviceAdded: DS.attr('string'),
+  devicePort: DS.attr('String'),
 
   isDeviceOn: function () {
     return (this.get('deviceStatus') === 'On');
