@@ -1537,17 +1537,16 @@ form.modal-dialog.md-mtrlzd {
   border-radius: 6px;
   display: inline-flex;
   padding: 5px;
-  margin-top: 10px;
+  // margin-top: 10px;
 }
-
-.not-connected {
-  background-color: #ff234b;
+.not-connected{
+  background-color: #e20d33;
   color: #ffffff;
   border: 1px solid transparent;
   border-radius: 6px;
   display: inline-flex;
   padding: 5px;
-  margin-top: 10px;
+  // margin-top: 10px;
 }
 
 .container-table {
@@ -1971,7 +1970,7 @@ label {
 .btn-default {
   height: 38px;
   font-size: 14px;
-  padding: 8px 15px;
+  padding: 10px 27px;
   border-radius: 2px;
   color: #ffffff;
   background-color: #f9bf3b;
@@ -1981,7 +1980,7 @@ label {
 .cancel-btn {
   height: 38px;
   font-size: 14px;
-  padding: 8px 15px;
+  padding: 10px 27px;
   border-radius: 2px;
   color: #656060;
   background-color: #d1d1d1;
@@ -2031,6 +2030,26 @@ label {
   width: 100%;
   display: none;
   padding-left: 30px;
+}
+
+.manage-devices-background {
+  background: #e9e7e7;
+  border-radius: 4px;
+  margin-bottom: 5px;
+}
+
+.captions {
+  font-size: 12px;
+}
+
+.device-not-connected {
+  color: #e20d33;
+  font-weight: bold;
+}
+
+.device-connected {
+  color: #519259;
+  font-weight: bold;
 }
 
 

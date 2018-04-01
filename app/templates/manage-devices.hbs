@@ -4,7 +4,7 @@
           {{#widget-header}}{{/widget-header}}
             <div class="page-wrapper col-xs-12 col-sm-12 col-md-12 col-lg-12 sidebar-closed">
               {{#side-bar}}{{/side-bar}}
-                <div class="body hide-content full-width">
+                <div class="body hide-content">
                     <!--<div class="table-responsive">-->
                     <!--<div class="row">-->
                     <!--<div class="table-cell col-xs-2 col-sm-2 col-md-2 col-lg-2">vfjdbvl</div>-->
@@ -13,47 +13,106 @@
                     <!--<div class="table-cell col-xs-4 col-sm-4 col-md-4 col-lg-4">212</div>-->
                     <!--</div>-->
                     <!--</div>-->
-                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <table class="table-responsive">
                         {{#each model as |device|}}
                           {{#if device.isDeviceOn}}
-                              <tr>
-                                  <td class="status">
-                                      <button {{action "onRemoveBtnClicked"}}><i class="fa fa-minus"></i></button>
-                                  </td>
-                                  <td class="connected-devices">{{device.deviceName}}</td>
-                                  <td class="connected">{{device.deviceStatus}}</td>
-                                  <td class="connected-devices">{{device.deviceGroup}}</td>
-                                  <td class="connected-devices">{{device.unitLimit}}</td>
-                                  <td class="connected-devices">{{device.deviceUnits}}</td>
-                                  <td><button class="btn-manage" {{action "onManageBtnClicked" device}}>Manage</button></td>
-                              </tr>
+                              <div class="layout-container full-width manage-devices-background">
+                                  <div class="layout-container full-width">
+                                      <div class="layout-col-12 pad-l-lr">
+                                          <div class="layout-container captions">Device Name</div>
+                                          <div class="layout-container connected-devices">{{device.deviceName}}</div>
+                                      </div>
+                                      <div class="layout-col-12">
+                                          <div class="layout-container captions">Device Status</div>
+                                          <div class="layout-container device-connected">{{device.deviceStatus}}</div>
+                                      </div>
+                                  </div>
+                                  <div class="layout-container full-width">
+                                      <div class="layout-col-12 pad-l-lr">
+                                          <div class="layout-container captions">Unit Limit</div>
+                                          <div class="layout-container connected-devices">{{device.unitLimit}}</div>
+                                      </div>
+                                      <div class="layout-col-12">
+                                          <div class="layout-container captions">Device Units</div>
+                                          <div class="layout-container connected-devices">{{device.deviceUnits}}</div>
+                                      </div>
+                                  </div>
+
+                                  <div class="layout-container full-width" style="margin-bottom: 5px">
+                                      <div class="layout-col-12 pad-l-lr">
+                                          <button {{action 'onDeviceOnBtnClicked' device}} style="background: #519259; color: whitesmoke;border: none">ON</button>
+                                      </div>
+
+                                      <div class="layout-col-12">
+                                          <button {{action 'onDeviceOffBtnClicked' device}} style="background: #e20d33;color: whitesmoke;border: none">OFF</button>
+                                      </div>
+                                  </div>
+                                  </div>
+
+
+
+
+                                  <!--<div class="status"><i class="fa fa-minus"></i></div>-->
+                                  <!--<div class="connected-devices">{{device.deviceName}}</div>-->
+                                  <!--<div class="connected">{{device.deviceStatus}}</div>-->
+                                  <!--<div class="connected-devices">{{device.deviceGroup}}</div>-->
+                                  <!--<div class="connected-devices">{{device.unitLimit}}</div>-->
+                                  <!--<div class="connected-devices">{{device.deviceUnits}}</div>-->
+                                  <!--<div><button class="btn-manage" {{action "onManageBtnClicked" device}}>Manage</button></div>-->
+
                           {{else}}
-                              <tr>
-                                  <td class="status">
-                                      <button {{action "onRemoveBtnClicked" device}}><i class="fa fa-minus"></i></button>
-                                  </td>
-                                  <td class="connected-devices">{{device.deviceName}}</td>
-                                  <td class="not-connected">{{device.deviceStatus}}</td>
-                                  <td class="connected-devices">{{device.deviceGroup}}</td>
-                                  <td class="connected-devices">{{device.unitLimit}}</td>
-                                  <td class="connected-devices">{{device.deviceUnits}}</td>
-                                  <td><button class="btn-manage" {{action "onManageBtnClicked" device}}>Manage</button></td>
-                              </tr>
+                              <div class="layout-container full-width manage-devices-background">
+                                  <div class="layout-container full-width">
+                                      <div class="layout-col-12 pad-l-lr">
+                                          <div class="layout-container captions">Device Name</div>
+                                          <div class="layout-container connected-devices">{{device.deviceName}}</div>
+                                      </div>
+                                      <div class="layout-col-12">
+                                          <div class="layout-container captions">Device Status</div>
+                                          <div class="layout-container device-not-connected">{{device.deviceStatus}}</div>
+                                      </div>
+                                  </div>
+                                  <div class="layout-container full-width">
+                                      <div class="layout-col-12 pad-l-lr">
+                                          <div class="layout-container captions">Unit Limit</div>
+                                          <div class="layout-container connected-devices">{{device.unitLimit}}</div>
+                                      </div>
+                                      <div class="layout-col-12">
+                                          <div class="layout-container captions">Device Units</div>
+                                          <div class="layout-container connected-devices">{{device.deviceUnits}}</div>
+                                      </div>
+                                  </div>
+
+                                  <div class="layout-container full-width" style="margin-bottom: 5px">
+                                      <div class="layout-col-12 pad-l-lr">
+                                          <button {{action 'onDeviceOnBtnClicked' device}} style="background: #519259; color: whitesmoke;border: none">ON</button>
+                                      </div>
+
+                                  <div class="layout-col-12">
+                                      <button {{action 'onDeviceOffBtnClicked' device}} style="background: #e20d33; color: whitesmoke;border: none">OFF</button>
+                                  </div>
+                                  </div>
+                              </div>
+                              <!--<div>-->
+                                  <!--<div class="status"><i class="fa fa-minus"></i></div>-->
+                                  <!--<div class="connected-devices">{{device.deviceName}}</div>-->
+                                  <!--<div class="not-connected">{{device.deviceStatus}}</div>-->
+                                  <!--<div class="connected-devices">{{device.deviceGroup}}</div>-->
+                                  <!--<div class="connected-devices">{{device.unitLimit}}</div>-->
+                                  <!--<div class="connected-devices">{{device.deviceUnits}}</div>-->
+                                  <!--<div><button class="btn-manage" {{action "onManageBtnClicked" device}}>Manage</button></div>-->
+                              <!--</div>-->
                           {{/if}}
 
-                            <div id="{{device.deviceName}}" style="display:none">
-                                <div class="full-width">
-                               <tr>
-                                <td>Manage {{device.deviceName}}</td>
-                                <td><button {{action 'onDeviceOnBtnClicked' device}} style="background: green; color: whitesmoke">On</button></td>
-                                <td><button {{action 'onDeviceOffBtnClicked' device}} style="background: red;color: whitesmoke">Off</button></td>
-                               </tr>
-                                </div>
-                            </div>
+                            <!--<div id="{{device.deviceName}}" class="layout-container" style="display:none">-->
+                                <!--<div class="layout-container"><span>Manage</span> <span class="pad-s-lr">{{device.deviceName}}</span></div>-->
+                                <!--<div class="layout-container">-->
+                                <!--<div class="layout-col"><button {{action 'onDeviceOnBtnClicked' device}} style="background: green; color: whitesmoke">On</button></div>-->
+                                <!--<div class="layout-col"><button {{action 'onDeviceOffBtnClicked' device}} style="background: red;color: whitesmoke">Off</button></div>-->
+                                <!--</div>-->
+                            <!--</div>-->
                         {{/each}}
                     </table>
-                  </div>
                 </div>
             </div>
         </div>
