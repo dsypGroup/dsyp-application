@@ -1450,51 +1450,50 @@ form.modal-dialog.md-mtrlzd {
 @media (min-width: 1200px) {
 }
 
-.side-bar {
-  background-color: #000000;
-  .logo {
-    padding: 15px 25px;
-  }
+.side-bar{
+    background-color: #000000;
+    .logo{
+        padding: 5px 25px 35px;
+    }
 }
-
-.page-wrapper {
-  position: relative;
-  .side-bar {
+.page-wrapper{
+    position: relative;
+    .side-bar{
     position: absolute;
-  }
-  &.sidebar-opened {
-    .side-bar {
-      visibility: visible;
-      width: 300px;
-      top: -64px;
-      left: 0;
     }
-    .main-content {
-      margin-left: 240px;
-      .logo {
-        display: none;
-        padding: 7px 8px;
-      }
-    }
-  }
-  &.sidebar-closed {
-    .side-bar {
-      visibility: hidden;
-      left: -270px;
-    }
-    .main-content {
-      margin-left: 0;
-      .logo {
-        padding: 7px 8px;
-        .details {
-          .link {
-            display: inline-block;
-            margin-left: 240px;
-          }
+    &.sidebar-opened{
+        .side-bar{
+            visibility: visible;
+            width: 310px;
+            top: -64px;
+            left: 0;
         }
-      }
+        .main-content{
+            margin-left:240px;
+            .logo{
+                display: none;
+                padding: 7px 8px;
+            }
+        }
     }
-  }
+    &.sidebar-closed{
+        .side-bar{
+            visibility: hidden;
+            left: -270px;
+        }
+        .main-content{
+            margin-left: 0;
+            .logo{
+                padding: 7px 8px;
+                .details{
+                    .link{
+                        display: inline-block;
+                        margin-left: 240px;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .row {
