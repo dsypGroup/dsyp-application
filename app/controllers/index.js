@@ -6,6 +6,8 @@ export default Ember.Controller.extend({
     isSignUpClicked: false,
     isAuthenticated: false,
     isHomeViewEnabled: false,
+    user: '',
+
     model: {},
 
     actions: {
@@ -34,6 +36,7 @@ export default Ember.Controller.extend({
                 }).then(function (resp) {
                     if (resp == 200) {
                         that.set('isAuthenticated', true);
+                        that.set('user', username);
                     } else if (resp == 0) {
                         //Show password or username incorrect message
                         loginMsgElem.css('background-color', '#e15848');

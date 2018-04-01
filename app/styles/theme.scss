@@ -505,6 +505,7 @@ thead {
   //width: 240px;
   //height: 150px;
   position: absolute;
+  margin-bottom: 10px;
   //top: calc(50% - 25px);
   //top: -webkit-calc(50% - 25px);
   //left: calc(50% - 120px);
@@ -612,6 +613,11 @@ thead {
   z-index: 17;
   background: #fcd116;
   content: '';
+}
+
+.msg-connect{
+  margin-top: 75px !important;
+  font-size: 25px;
 }
 
 /*Byte Animation*/

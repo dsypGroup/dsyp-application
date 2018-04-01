@@ -9,10 +9,15 @@
                       {{#widget-header}}{{/widget-header}}
                       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 page-wrapper sidebar-closed">
                           {{#side-bar}}{{/side-bar}}
-                            <div class="body hide-content">
+                            <div class="body hide-content center-block">
                                 <div class="row">
-                                <div>Connect your device</div>
-                                <button  {{action "clickConnectBtn"}}> Connect </button>
+                                <div class="layout-container logo">
+                                    <img src="assets/images/logo_2_dark.png">
+                                </div>
+                                <div class="layout-col h-middle full-width">Version DYSP_MOB_1.0.0</div>
+                                </div>
+                                <div class="row">
+                                    <h2>Hi {{username}}</h2>
                                 </div>
                                 <div class="row">
                                     <div class="box">
@@ -22,6 +27,10 @@
                                         <div class="byte"></div>
                                         <div class="server"></div>
                                     </div>
+                                </div>
+                                <div class="row msg-connect">
+                                    <div>Your Device is Connected</div>
+                                    <!--<button  {{!action "clickConnectBtn"}}> Connect </button>-->
                                 </div>
 
                             </div>
