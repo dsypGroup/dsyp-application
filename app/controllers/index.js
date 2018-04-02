@@ -31,7 +31,7 @@ export default Ember.Controller.extend({
             if (utils.validators.isAvailable(username) && utils.validators.isAvailable(password)) {
                 $.ajax({
                     type: "POST",
-                    url: "http://ec2-18-217-238-61.us-east-2.compute.amazonaws.com:3000/api/login",
+                    url: "http://ec2-18-188-126-17.us-east-2.compute.amazonaws.com:3000/api/login",
                     data: {username: username, password: password}
                 }).then(function (resp) {
                     if (resp == 200) {
