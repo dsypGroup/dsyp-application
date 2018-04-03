@@ -6,12 +6,6 @@
               {{#side-bar}}{{/side-bar}}
                 <div class="body hide-content">
                     <div class="layout-container about-us-header">Manage Tasks</div>
-                    <!--<div class="table-responsive">-->
-                        <!--<div class="row">-->
-                            <!--<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 table-cell">gfkyuj</div>-->
-                            <!--<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 table-cell">2132</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
                     <div class="full-width pos-rel">
                         <div class="layout-container pad-l-tb full-width">
                             <div class="layout-container pad-m-tb">
@@ -69,8 +63,7 @@
                                       <tr>
                                           <td class="col-xs-4 col-sm-4 col-md-4 col-lg-4 connected-devices">{{device.deviceName}}</td>
                                           <td class="col-xs-4 col-sm-4 col-md-4 col-lg-4 connected-devices">{{device.deviceUnits}}</td>
-                                          <td class="col-xs-4 col-sm-4 col-md-4 col-lg-4 connected-devices">{{calculate device.deviceUnits}}</td>
-                                          <!--<td><button class="btn-manage" {{!action "onCalculateBillBtnClicked" device}}>Check Bill</button></td>-->
+                                          <td class="col-xs-4 col-sm-4 col-md-4 col-lg-4 connected-devices">{{device.deviceUnits}}*60</td>
                                       </tr>
                               {{/each}}
                               {{else}}

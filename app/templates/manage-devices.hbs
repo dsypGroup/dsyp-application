@@ -5,14 +5,6 @@
             <div class="page-wrapper col-xs-12 col-sm-12 col-md-12 col-lg-12 sidebar-closed">
               {{#side-bar}}{{/side-bar}}
                 <div class="body hide-content">
-                    <!--<div class="table-responsive">-->
-                    <!--<div class="row">-->
-                    <!--<div class="table-cell col-xs-2 col-sm-2 col-md-2 col-lg-2">vfjdbvl</div>-->
-                    <!--<div class="table-cell col-xs-4 col-sm-4 col-md-4 col-lg-4">123</div>-->
-                    <!--<div class="table-cell col-xs-2 col-sm-2 col-md-2 col-lg-2">vjhv</div>-->
-                    <!--<div class="table-cell col-xs-4 col-sm-4 col-md-4 col-lg-4">212</div>-->
-                    <!--</div>-->
-                    <!--</div>-->
                     <table class="table-responsive">
                         {{#each model as |device|}}
                           {{#if device.isDeviceOn}}
@@ -48,18 +40,6 @@
                                       </div>
                                   </div>
                                   </div>
-
-
-
-
-                                  <!--<div class="status"><i class="fa fa-minus"></i></div>-->
-                                  <!--<div class="connected-devices">{{device.deviceName}}</div>-->
-                                  <!--<div class="connected">{{device.deviceStatus}}</div>-->
-                                  <!--<div class="connected-devices">{{device.deviceGroup}}</div>-->
-                                  <!--<div class="connected-devices">{{device.unitLimit}}</div>-->
-                                  <!--<div class="connected-devices">{{device.deviceUnits}}</div>-->
-                                  <!--<div><button class="btn-manage" {{action "onManageBtnClicked" device}}>Manage</button></div>-->
-
                           {{else}}
                               <div class="layout-container full-width manage-devices-background">
                                   <div class="layout-container full-width">
@@ -93,24 +73,7 @@
                                   </div>
                                   </div>
                               </div>
-                              <!--<div>-->
-                                  <!--<div class="status"><i class="fa fa-minus"></i></div>-->
-                                  <!--<div class="connected-devices">{{device.deviceName}}</div>-->
-                                  <!--<div class="not-connected">{{device.deviceStatus}}</div>-->
-                                  <!--<div class="connected-devices">{{device.deviceGroup}}</div>-->
-                                  <!--<div class="connected-devices">{{device.unitLimit}}</div>-->
-                                  <!--<div class="connected-devices">{{device.deviceUnits}}</div>-->
-                                  <!--<div><button class="btn-manage" {{action "onManageBtnClicked" device}}>Manage</button></div>-->
-                              <!--</div>-->
                           {{/if}}
-
-                            <!--<div id="{{device.deviceName}}" class="layout-container" style="display:none">-->
-                                <!--<div class="layout-container"><span>Manage</span> <span class="pad-s-lr">{{device.deviceName}}</span></div>-->
-                                <!--<div class="layout-container">-->
-                                <!--<div class="layout-col"><button {{action 'onDeviceOnBtnClicked' device}} style="background: green; color: whitesmoke">On</button></div>-->
-                                <!--<div class="layout-col"><button {{action 'onDeviceOffBtnClicked' device}} style="background: red;color: whitesmoke">Off</button></div>-->
-                                <!--</div>-->
-                            <!--</div>-->
                         {{/each}}
                     </table>
                 </div>
