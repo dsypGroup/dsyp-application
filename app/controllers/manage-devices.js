@@ -22,21 +22,27 @@ export default Ember.Controller.extend({
     },
 
     onDeviceOnBtnClicked: function (device) {
+      //send a request to the server to On the specific device and update the according data store
         var newDeviceStatus = 'On';
         var onDevice = this.get('model').findBy('id', device.id);
+
         onDevice.set('deviceStatus', newDeviceStatus);
         onDevice.save();
     },
 
     onDeviceOffBtnClicked: function (device) {
+      //send a request to the server to Off the specific device and update the according data store
       var newDeviceStatus = 'Off';
       var offDevice = this.get('model').findBy('id', device.id);
+
       offDevice.set('deviceStatus', newDeviceStatus);
       offDevice.save();
     },
 
     onRemoveBtnClicked: function (device){
+      //send a request to the server to remove the specific device and update the according data store
       var remove = this.get('model').findBy('id', device.id);
+
       remove.destroyRecord().then(function(respons) {
         console.log('Response' + respons);
       });
