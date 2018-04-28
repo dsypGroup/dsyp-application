@@ -21,6 +21,25 @@
       }
 
       </style>
+    <script>
+      var initializeCordova = function() {
+        var newScript = document.createElement("script");
+        var appNavigator = navigator.userAgent;
+
+        // Global Variable to identify native device
+        navigator.isNativeDevice = true;
+
+        newScript.type = "text/javascript";
+
+        if (appNavigator.indexOf('Mac OS') < 0 && appNavigator.indexOf('iPhone') < 0) {
+          newScript.src = "assets/cordova/android/cordova-{{TIMESTAMP}}.js";
+        } else {
+          newScript.src = "assets/cordova/ios/cordova-{{TIMESTAMP}}.js";
+        }
+
+        document.head.appendChild(newScript);
+      };
+    </script>
   </head>
   <body>
     {{content-for "body"}}
