@@ -4,6 +4,8 @@ export default Ember.Controller.extend({
   isManageClicked: false,
   isCancelClicked: false,
   isCheckBillClicked: false,
+  isShowDevices: true,
+  isAutomated: false,
 
   model: function() {
     return this.store.findAll('device');
@@ -14,6 +16,29 @@ export default Ember.Controller.extend({
             $(".page-wrapper").toggleClass('sidebar-opened');
             $(".page-wrapper").toggleClass('sidebar-closed');
         },
+
+      showDevices: function () {
+        this.set('isShowDevices', false);
+      },
+
+      saveResults: function (device) {
+        this.set('isShowDevices', true);
+
+        //send a request to the server to add devices to automated mode
+        if ('isAutomated') {
+          var automatedDevice = 'Automated';
+          var automateDevice = this.get('model').findBy('id', device.id);
+
+          automateDevice.set('isDeviceAutomated', automatedDevice);
+          automateDevice.save();
+        } else {
+          var notAutomatedDevice = 'Not Automated';
+          var notAutomateDevice = this.get('model').findBy('id', device.id);
+
+          notAutomateDevice.set('isDeviceAutomated', notAutomatedDevice);
+          notAutomateDevice.save();
+        }
+      },
 
       onTurnOffClicked: function() {
         var loginMsgElem = Ember.$('div#turnOffPopUp');

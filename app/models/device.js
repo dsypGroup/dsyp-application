@@ -8,6 +8,7 @@ export default DS.Model.extend({
   deviceUnits: DS.attr('string'),
   deviceAdded: DS.attr('string'),
   devicePort: DS.attr('String'),
+  isDeviceAutomated: DS.attr('String'),
 
   isDeviceOn: function () {
     return (this.get('deviceStatus') === 'On');
@@ -15,5 +16,9 @@ export default DS.Model.extend({
 
   isDeviceAdded: function () {
     return (this.get('deviceAdded') === 'Added');
-  }.property('deviceName', 'deviceAdded')
+  }.property('deviceName', 'deviceAdded'),
+
+  isAutomated: function () {
+    return (this.get('isDeviceAutomated') === 'Automated');
+  }.property('deviceName', 'isDeviceAutomated')
 });

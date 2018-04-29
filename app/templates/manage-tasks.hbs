@@ -8,33 +8,61 @@
                     <div class="layout-container about-us-header">Manage Tasks</div>
                     <div class="full-width pos-rel">
                         <div class="layout-container pad-l-tb full-width">
-                            <div class="layout-container pad-m-tb">
-                                <div class="layout-col connected-devices">Automated</div>
-                                <div class="layout-col-24"></div>
-                                <div class="layout-col pad-s-lr pad-s-tb" {{action 'onTurnOffClicked'}}>
-                                    <span class="remove pad-s-lr pad-s-tb"><i class="fa fa-minus"></i></span>
+                            <div class="layout-container pad-m-tb full-width">
+                             {{#if isShowDevices}}
+                                <div class="layout-container pad-s-tb">
+                                    <div class="layout-container pad-s-tb">
+                                        <div class="layout-col bold">Automate Devices</div>
+                                    </div>
+                                    <div class="layout-container">
+                                       <div class="layout-col">
+                                           <button type="submit" class="btn-default" {{action "showDevices"}}>Add to Automate mode</button>
+                                       </div>
+                                   </div>
                                 </div>
-                                <div class="layout-col pad-s-lr  pad-s-tb" {{action 'onTurnOnClicked'}}>
-                                    <span class="keep pad-s-lr pad-s-tb"><i class="fa fa-plus"></i></span>
+
+                                {{else}}
+                                {{#each model as |device|}}
+                                <div class="layout-container full-width">
+                                    <div class="layout-col">{{device.deviceName}}</div>
+                                    <div class="layout-col">
+                                        <label class="NM">
+                                            <input type="checkbox" id={{device.id}} checked="isAutomated">
+                                            <span class="checkMark"></span>
+                                        </label>
+                                    </div>
                                 </div>
+                            {{/each}}
+                                 <div class="layout-container pad-m-tb">
+                                     <button type="submit" class="btn-default" {{action "saveResults"}}>Save</button>
+                                 </div>
+                             {{/if}}
+                                <!--<div class="layout-col connected-devices">Automated</div>-->
+                                <!--<div class="layout-col-24"></div>-->
+                                <!--<div class="layout-col pad-s-lr pad-s-tb" {{!action 'onTurnOffClicked'}}>-->
+                                    <!--<span class="remove pad-s-lr pad-s-tb"><i class="fa fa-minus"></i></span>-->
+                                <!--</div>-->
+                                <!--<div class="layout-col pad-s-lr  pad-s-tb" {{!action 'onTurnOnClicked'}}>-->
+                                    <!--<span class="keep pad-s-lr pad-s-tb"><i class="fa fa-plus"></i></span>-->
+                                <!--</div>-->
                             </div>
 
                             <div class="layout-container widget-hline"></div>
 
-                            <div class="layout-container pad-m-tb">
-                                <div class="layout-col connected-devices">Manually On/Off</div>
-                                <div class="layout-col-24"></div>
-                                <div class="layout-col pad-s-lr pad-s-tb" {{action 'onTurnOffClicked'}}>
-                                    <span class="remove pad-s-lr pad-s-tb"><i class="fa fa-minus"></i></span>
-                                </div>
-                                <div class="layout-col pad-s-lr pad-s-tb" {{action 'onTurnOnClicked'}}>
-                                    <span class="keep pad-s-lr pad-s-tb"><i class="fa fa-plus"></i></span>
-                                </div>
-                            </div>
+                            <!--<div class="layout-container pad-m-tb">-->
+                                <!--<div class="layout-col connected-devices">Manually On/Off</div>-->
+                                <!--<div class="layout-col-24"></div>-->
+                                <!--<div class="layout-col pad-s-lr pad-s-tb" {{!action 'onTurnOffClicked'}}>-->
+                                    <!--<span class="remove pad-s-lr pad-s-tb"><i class="fa fa-minus"></i></span>-->
+                                <!--</div>-->
+                                <!--<div class="layout-col pad-s-lr pad-s-tb" {{!action 'onTurnOnClicked'}}>-->
+                                    <!--<span class="keep pad-s-lr pad-s-tb"><i class="fa fa-plus"></i></span>-->
+                                <!--</div>-->
+                            <!--</div>-->
 
                             <div class="layout-container widget-hline"></div>
 
-                            <div class="layout-containe pad-l-tb">
+                            <div class="layout-container pad-l-tb">
                                 <div class="layout-col bold">Units Consumed for Month</div>
                                 <div class="layout-col-24"></div>
                                 <div class="layout-col">
@@ -92,7 +120,9 @@
                                   </div>
                               </div>
                           {{/each}}
+                                {{!#if isCancelClicked}}
                                   <div class="layout-container"><button {{action 'cancel'}}>Cancel</button></div>
+                                 {{!/if}}
                               </div>
                           </div>
 
@@ -116,8 +146,10 @@
                                   </div>
                                   {{/unless}}
                               {{/each}}
-                                    <div class="layout-container"><button {{action 'close'}}>Cancel</button></div>
-                                </div>
+                                    {{!#if isCancelClicked}}
+                                    <div class="layout-container"><button {{action 'cancel'}}>Cancel</button></div>
+                                    {{!/if}}
+                              </div>
                             </div>
                         </div>
                     </div>
