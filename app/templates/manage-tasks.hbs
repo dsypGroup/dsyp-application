@@ -23,9 +23,10 @@
 
                                 {{else}}
                                 {{#each model as |device|}}
-                                <div class="layout-container full-width">
-                                    <div class="layout-col">{{device.deviceName}}</div>
-                                    <div class="layout-col">
+                                <div class="layout-container pad-s-tb full-width">
+                                    <div class="layout-col h-left pad-l-lr">{{device.deviceName}}</div>
+                                    <div class="layout-col-24"></div>
+                                    <div class="layout-col pad-l-lr h-right">
                                         <label class="NM">
                                             {{input type="checkbox" id=device.id checked=isAutomated}}
                                             <span class="checkMark"></span>
