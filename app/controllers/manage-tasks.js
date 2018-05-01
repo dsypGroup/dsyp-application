@@ -5,7 +5,7 @@ export default Ember.Controller.extend({
   isCancelClicked: false,
   isCheckBillClicked: false,
   isShowDevices: true,
-  isAutomated: false,
+  // isAutomated: false,
 
   model: function() {
     return this.store.findAll('device');
@@ -22,21 +22,18 @@ export default Ember.Controller.extend({
       },
 
       saveResults: function (device) {
+        var that = this;
         this.set('isShowDevices', true);
+        var model = this.get('model.content');
 
-        //send a request to the server to add devices to automated mode
-        if ('isAutomated') {
-          var automatedDevice = 'Automated';
-          var automateDevice = this.get('model').findBy('id', device.id);
+        if (model && model.length > 0) {
+          Ember.$.each(model, function (index, device) {
+            var device = that.get('model').findBy('id', device.id);
+            var isAutomated = $('#' + device.id).is(":checked");
 
-          automateDevice.set('isDeviceAutomated', automatedDevice);
-          automateDevice.save();
-        } else {
-          var notAutomatedDevice = 'Not Automated';
-          var notAutomateDevice = this.get('model').findBy('id', device.id);
-
-          notAutomateDevice.set('isDeviceAutomated', notAutomatedDevice);
-          notAutomateDevice.save();
+            device.set('isDeviceAutomated', isAutomated);
+            device.save();
+          });
         }
       },
 
