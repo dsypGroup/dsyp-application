@@ -112,7 +112,13 @@ strong {
   color: #d4d4d4;
   margin-bottom: 5px;
   padding: 12px;
+  z-index: 1000;
+  position: fixed;
   //margin-left: -100px;
+}
+
+.stable{
+  position: fixed;
 }
 
 .project-header {
@@ -139,6 +145,10 @@ strong {
 .menu a:hover {
   color: #fcd116;
   text-decoration: none;
+}
+.menu a:active{
+  color: #000 ;
+  background: red;
 }
 
 .dropdown {
@@ -499,6 +509,7 @@ thead {
 .body {
   padding-left: 5px;
   min-width: 300px;
+  margin-top: 70px;
 }
 
 .box {
@@ -1471,7 +1482,7 @@ form.modal-dialog.md-mtrlzd {
         .side-bar{
             visibility: visible;
             width: 310px;
-            top: -64px;
+            top: 5px;
             left: 0;
         }
         .main-content{
