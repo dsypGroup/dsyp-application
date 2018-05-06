@@ -27,8 +27,8 @@
                                     <div class="layout-col h-left pad-l-lr">{{device.deviceName}}</div>
                                     <div class="layout-col-24"></div>
                                     <div class="layout-col pad-l-lr h-right">
-                                        <label class="NM">
-                                            {{input type="checkbox" id=device.id checked=isAutomated}}
+                                        <label for={{device.id}} class="NM">
+                                            {{input type="checkbox" checked='' id=device.id}}
                                             <span class="checkMark"></span>
                                         </label>
                                     </div>
