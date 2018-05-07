@@ -25,18 +25,21 @@ export default Ember.Controller.extend({
           if (model && model.length > 0) {
             Ember.$.each(model, function (index, device) {
               var device = that.get('model').findBy('id', device.id);
-              $('#' + 'devicePort1MotionSensor').prop('checked', true);
+              var lightSensorId = device.data.lightSensorId;
+              var motionSensorId = device.data.motionSensorId;
+
+              $('#' + motionSensorId).prop('checked', true);
 
               if (device.data.lightSensor == "enabled") {
-                $('#' + 'devicePort1LightSensor').prop('checked', true);
+                $('#' + lightSensorId).prop('checked', true);
               } else if (device.data.lightSensor == "disabled") {
-                $('#' + 'devicePort1LightSensor').prop('checked', false);
+                $('#' + lightSensorId).prop('checked', false);
               }
 
               if (device.data.motionSensor == "enabled") {
-                $('#' + 'devicePort1MotionSensor').prop('checked', true);
+                $('#' + motionSensorId).prop('checked', true);
               } else if (device.data.motionSensor == "disabled") {
-                $('#' + 'devicePort1MotionSensor').prop('checked', false);
+                $('#' + motionSensorId).prop('checked', false);
               }
             });
           }
