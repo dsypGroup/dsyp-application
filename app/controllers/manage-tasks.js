@@ -18,6 +18,30 @@ export default Ember.Controller.extend({
         },
 
       showDevices: function () {
+        var model = this.get('model.content');
+        var that = this;
+
+        Ember.run.later((function() {
+          if (model && model.length > 0) {
+            Ember.$.each(model, function (index, device) {
+              var device = that.get('model').findBy('id', device.id);
+              $('#' + 'devicePort1MotionSensor').prop('checked', true);
+
+              if (device.data.lightSensor == "enabled") {
+                $('#' + 'devicePort1LightSensor').prop('checked', true);
+              } else if (device.data.lightSensor == "disabled") {
+                $('#' + 'devicePort1LightSensor').prop('checked', false);
+              }
+
+              if (device.data.motionSensor == "enabled") {
+                $('#' + 'devicePort1MotionSensor').prop('checked', true);
+              } else if (device.data.motionSensor == "disabled") {
+                $('#' + 'devicePort1MotionSensor').prop('checked', false);
+              }
+            });
+          }
+        }), 200);
+
         this.set('isShowDevices', false);
       },
 
@@ -29,12 +53,28 @@ export default Ember.Controller.extend({
         if (model && model.length > 0) {
           Ember.$.each(model, function (index, device) {
             var device = that.get('model').findBy('id', device.id);
-            var isAutomated = $('#' + device.id).is(":checked");
+            var motionSenseCheck = $('#' + device.data.motionSensorId).is(":checked");
+            var lightSenseCheck = $('#' + device.data.lightSensorId).is(":checked");
 
-            device.set('isDeviceAutomated', isAutomated);
+            if (motionSenseCheck) {
+              device.set('motionSensor', 'enabled');
+            } else {
+              device.set('motionSensor', 'disabled');
+            }
+
+            if (lightSenseCheck) {
+              device.set('lightSensor', 'enabled');
+            } else {
+              device.set('lightSensor', "disabled");
+            }
+
             device.save();
           });
         }
+      },
+
+      cancel: function() {
+        this.set('isShowDevices', true);
       },
 
       onTurnOffClicked: function() {

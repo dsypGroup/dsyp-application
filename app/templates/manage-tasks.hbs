@@ -27,8 +27,14 @@
                                     <div class="layout-col h-left pad-l-lr">{{device.deviceName}}</div>
                                     <div class="layout-col-24"></div>
                                     <div class="layout-col pad-l-lr h-right">
-                                        <label for={{device.id}} class="NM">
-                                            {{input type="checkbox" checked='' id=device.id}}
+                                        <label for={{device.motionSensorId}} class="NM">
+                                            {{input type="checkbox" checked='' id=device.motionSensorId}}
+                                            <span class="checkMark"></span>
+                                        </label>
+                                    </div>
+                                    <div class="layout-col pad-l-lr h-right">
+                                        <label for={{device.lightSensorId}} class="NM">
+                                            {{input type="checkbox" checked='' id=device.lightSensorId}}
                                             <span class="checkMark"></span>
                                         </label>
                                     </div>
@@ -36,6 +42,7 @@
                             {{/each}}
                                  <div class="layout-container pad-l-lr pad-m-tb">
                                      <button type="submit" class="btn-default" {{action "saveResults"}}>Save</button>
+                                     <button style="margin-left:50px" type="submit" class="btn-default" {{action "cancel"}}>Cancel</button>
                                  </div>
                              {{/if}}
                                 <!--<div class="layout-col connected-devices">Automated</div>-->
