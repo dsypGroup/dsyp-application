@@ -133,35 +133,6 @@ export default Ember.Controller.extend({
           //checkBillArea.style.display = "none";
           this.set('isCheckBillClicked', false);
         }
-
-
       }
-      //cancel: function() {
-      //  var cancel = Ember.$('div#cancelAction');
-      //
-      //  if(!this.get('isCancelClicked')) {
-      //    cancel.removeClass("display-none");
-      //    cancel.addClass("display-inline");
-      //    this.set('isCancelClicked', true);
-      //  } else {
-      //    cancel.removeClass("display-inline");
-      //    cancel.addClass("display-none");
-      //    this.set('isCancelClicked', false);
-      //  }
-      //},
-      //
-      //close: function() {
-      //  var close = Ember.$('div#closeAction');
-      //
-      //  if(!this.get('isCancelClicked')) {
-      //    close.removeClass("display-none");
-      //    close.addClass("display-inline");
-      //    this.set('isCancelClicked', true);
-      //  } else {
-      //    close.removeClass("display-inline");
-      //    close.addClass("display-none");
-      //    this.set('isCancelClicked', false);
-      //  }
-      //}
     }
 });

@@ -6,37 +6,76 @@
               {{#side-bar}}{{/side-bar}}
                 <div class="body hide-content">
                     <div class="table-responsive">
-                        <table class="display-devices">
-                            <tr class="table-heading">
-                                <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">Device</th>
-                                <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">Device Port</th>
-                                <th class="col-xs-1 col-sm-2 col-md-2 col-lg-2">Status</th>
-                                <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">Group</th>
-                                <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">Unit Limit</th>
-                                <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">Used Units</th>
-                            </tr>
-                          {{#each model as |device|}}
-                            {{#if device.isDeviceOn}}
-                                <tr>
-                                    <td class="connected-devices col-xs-2 col-sm-2 col-md-2 col-lg-2">{{device.deviceName}}</td>
-                                    <td class="connected-devices col-xs-2 col-sm-2 col-md-2 col-lg-2">{{device.devicePort}}</td>
-                                    <td class="connected">{{device.deviceStatus}}</td>
-                                    <td class="connected-devices col-xs-2 col-sm-2 col-md-2 col-lg-2">{{device.deviceGroup}}</td>
-                                    <td class="connected-devices col-xs-2 col-sm-2 col-md-2 col-lg-2">{{device.unitLimit}}</td>
-                                    <td class="connected-devices col-xs-2 col-sm-2 col-md-2 col-lg-2">{{device.deviceUnits}}</td>
-                                </tr>
-                            {{else}}
-                                <tr>
-                                    <td class="connected-devices col-xs-2 col-sm-2 col-md-2 col-lg-2">{{device.deviceName}}</td>
-                                    <td class="connected-devices col-xs-2 col-sm-2 col-md-2 col-lg-2">{{device.devicePort}}</td>
-                                    <td class="not-connected">{{device.deviceStatus}}</td>
-                                    <td class="connected-devices col-xs-2 col-sm-2 col-md-2 col-lg-2">{{device.deviceGroup}}</td>
-                                    <td class="connected-devices col-xs-2 col-sm-2 col-md-2 col-lg-2">{{device.unitLimit}}</td>
-                                    <td class="connected-devices col-xs-2 col-sm-2 col-md-2 col-lg-2">{{device.deviceUnits}}</td>
-                                </tr>
-                            {{/if}}
-                          {{/each}}
-                        </table>
+                        <div class="layout-container full-width pad-m-lr">
+                            {{#each model as |device|}}
+                                {{#if device.isDeviceOn}}
+                            <div class="layout-container full-width pad-s-tb">
+                                <div class="layout-col">Device</div>
+                                <div class="layout-col h-right bold">{{device.deviceName}}</div>
+                            </div>
+
+                            <div class="layout-container full-width pad-s-tb">
+                                <div class="layout-col">Device Port</div>
+                                <div class="layout-col h-right bold">{{device.devicePort}}</div>
+                            </div>
+
+                            <div class="layout-container full-width pad-s-tb">
+                                <div class="layout-col">Status</div>
+                                <div class="layout-col">
+                                    <span class="connected bold">{{device.deviceStatus}}</span>
+                                </div>
+                            </div>
+
+                            <div class="layout-container full-width pad-s-tb">
+                                <div class="layout-col">Group</div>
+                                <div class="layout-col h-right bold">{{device.deviceGroup}}</div>
+                            </div>
+
+                            <div class="layout-container full-width pad-s-tb">
+                                <div class="layout-col">Unit Limit</div>
+                                <div class="layout-col h-right bold">{{device.unitLimit}}</div>
+                            </div>
+
+                            <div class="layout-container full-width pad-s-tb">
+                                <div class="layout-col">Used Units</div>
+                                <div class="layout-col h-right bold">{{device.deviceUnits}}</div>
+                            </div>
+                                {{else}}
+                                    <div class="layout-container full-width pad-s-tb">
+                                        <div class="layout-col">Device</div>
+                                        <div class="layout-col h-right bold">{{device.deviceName}}</div>
+                                    </div>
+
+                                    <div class="layout-container full-width pad-s-tb">
+                                        <div class="layout-col">Device Port</div>
+                                        <div class="layout-col h-right bold">{{device.devicePort}}</div>
+                                    </div>
+
+                                    <div class="layout-container full-width pad-s-tb">
+                                        <div class="layout-col">Status</div>
+                                        <div class="layout-col h-right">
+                                            <span class="not-connected bold">{{device.deviceStatus}}</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="layout-container full-width pad-s-tb">
+                                        <div class="layout-col">Group</div>
+                                        <div class="layout-col h-right bold">{{device.deviceGroup}}</div>
+                                    </div>
+
+                                    <div class="layout-container full-width pad-s-tb">
+                                        <div class="layout-col">Unit Limit</div>
+                                        <div class="layout-col h-right bold">{{device.unitLimit}}</div>
+                                    </div>
+
+                                    <div class="layout-container full-width pad-s-tb">
+                                        <div class="layout-col">Used Units</div>
+                                        <div class="layout-col h-right bold">{{device.deviceUnits}}</div>
+                                    </div>
+                                {{/if}}
+                                <div class="layout-container widget-hline"></div>
+                            {{/each}}
+                        </div>
                     </div>
                 </div>
             </div>
