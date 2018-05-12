@@ -28,8 +28,7 @@
                                 </div>
                                 {{#each model as |device|}}
                                 <div class="layout-container pad-s-tb full-width">
-                                    <div class="layout-col h-left pad-l-lr">{{device.deviceName}}</div>
-                                    <div class="layout-col-24"></div>
+                                    <div class="layout-col-24 h-left pad-l-lr">{{device.deviceName}}</div>
                                     <div class="layout-col pad-l-lr h-right">
                                         <label for={{device.motionSensorId}} class="NM">
                                             {{input type="checkbox" checked='' id=device.motionSensorId}}
@@ -76,7 +75,6 @@
 
                             <div class="layout-container pad-l-tb">
                                 <div class="layout-col bold">Units Consumed for Month</div>
-                                <div class="layout-col-24"></div>
                                 <div class="layout-col">
                                     <span></span>
                                 </div>
@@ -86,8 +84,7 @@
 
                             <div class="layout-container pad-l-tb">
                                 <div class="layout-col bold">Calculate Bill for Month</div>
-                                <div class="layout-col-24"></div>
-                                <div class="layout-col">
+                                <div class="layout-col pad-l-lr">
                                     <button type="submit" class="btn-default" {{action "onCalculateBillBtnClicked"}}>Calculate Bill</button>
                                 </div>
                             </div>
@@ -125,7 +122,6 @@
                             {{#if device.isDeviceAdded}}
                                 <div class="layout-container">
                                     <div class="layout-col pad-m-tb connected-devices">{{device.deviceName}}</div>
-                                    <div class="layout-col-24"></div>
                                     <div class="layout-col pad-s-tb connected">{{device.deviceAdded}}</div>
                                 </div>
                             {{/if}}
@@ -151,7 +147,6 @@
                                 {{#unless device.isDeviceAdded}}
                                     <div class="layout-container">
                                         <div class="layout-col pad-m-tb connected-devices">{{device.deviceName}}</div>
-                                        <div class="layout-col-24"></div>
                                         <div class="layout-col pad-s-tb not-connected">{{device.deviceAdded}}</div>
                                     </div>
                                 <div class="layout-container widget-hline"></div>
