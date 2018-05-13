@@ -99,8 +99,8 @@
                               {{#each model as |device|}}
                                       <tr>
                                           <td class="col-xs-4 col-sm-4 col-md-4 col-lg-4 connected-devices">{{device.deviceName}}</td>
-                                          <td class="col-xs-4 col-sm-4 col-md-4 col-lg-4 connected-devices">{{device.deviceUnits}}</td>
-                                          <td class="col-xs-4 col-sm-4 col-md-4 col-lg-4 connected-devices">{{calculate device.deviceUnits}}</td>
+                                          <td class="col-xs-4 col-sm-4 col-md-4 col-lg-4 connected-devices">{{formatDeviceUnits device.deviceUnits}}</td>
+                                          <td class="col-xs-4 col-sm-4 col-md-4 col-lg-4 connected-devices">Rs.{{calculate device.deviceUnits}}</td>
                                       </tr>
                               {{/each}}
                               <tr>

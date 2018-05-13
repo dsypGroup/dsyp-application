@@ -19,7 +19,7 @@ export function calculate(units, bool) {
     }
 
     if (units < 60 || units ==0 ) {
-        return units * charge_00;
+        return Number(units * charge_00).toFixed(2);
     } else if (units > 60 && units < 90) {
         return ((units - 60) * charge_60) + chargeStep1;
     } else if (units > 90 && units < 120){

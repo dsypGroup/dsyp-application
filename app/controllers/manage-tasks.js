@@ -171,7 +171,7 @@ export default Ember.Controller.extend({
           total = total + this.calculateDevPerBill(model.content[i].__data.deviceUnits);
         }
 
-        this.set('totalBill', total);
+        this.set('totalBill', 'Rs.' + Number(total).toFixed(2));
       }
     }
 });
