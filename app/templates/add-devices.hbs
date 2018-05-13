@@ -18,7 +18,7 @@
                       <div class="form-group">
                           <span>
                               <label class="D-name">Device Port</label>
-                              <select class="form-control" value=grp enter="onclickAddBtn" onchange={{action 'onSelectPortType' value="target.value"}}>
+                              <select id="devicePortSelection" class="form-control" value=grp enter="onclickAddBtn" onchange={{action 'onSelectPortType' value="target.value"}}>
                                   <option value="devicePort1">DevicePort1</option>
                                   <option value="devicePort2">DevicePort2</option>
                                   <option value="devicePort3">DevicePort3</option>
@@ -47,7 +47,7 @@
                               <button type="submit" class="btn-default" {{action "onclickAddBtn" this}}> Add</button>
                           </div>
                           <div class="layout-col form-group pad-l-lr">
-                              <button type="reset" class="cancel-btn" {{action "reset" this}}> Reset</button>
+                              <button type="reset" class="cancel-btn" {{action "onReset" this}}> Reset</button>
                           </div>
                       </div>
                     </table>

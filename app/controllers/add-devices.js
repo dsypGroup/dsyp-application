@@ -6,8 +6,14 @@ export default Ember.Controller.extend({
   isShowAddDevices: true,
 
   onLoad: function () {
+    this.disableDropdownOption();
     this.get('model');
   },
+
+  disableDropdownOption: function () {
+    $("#devicePortSelection option:disabled").prop("disabled", false);
+    $("#devicePortSelection option:selected").prop("disabled", true);
+  }.observes('device.devicePort'),
 
   actions: {
     onToggleBtnClick: function () {
@@ -16,6 +22,8 @@ export default Ember.Controller.extend({
     },
 
     onclickAddBtn: function (device) {
+      this.disableDropdownOption();
+
       var staticId = Math.floor(Date.now() / 1000);
 
       if (!device.grp) {
@@ -37,14 +45,15 @@ export default Ember.Controller.extend({
       });
 
       newRecord.save();
-
       this.set('isShowAddDevices', false);
     },
 
     showAddDevicePage: function () {
+      this.disableDropdownOption();
+
       this.set('isShowAddDevices', true);
       this.set('device.grp', '');
-      this.set('device.devicePort', '');
+      //this.set('device.devicePort', '');
     },
 
     onSelectEntityType: function (grp) {
@@ -52,7 +61,25 @@ export default Ember.Controller.extend({
     },
 
     onSelectPortType: function (port) {
+      this.disableDropdownOption();
       this.set('devicePort', port);
+
+      //$("#devicePortSelection option:disabled").prop("disabled", false);
+      //$("#devicePortSelection option:selected").prop("disabled", true);
+
+      //var dropDown = document.getElementById("devicePortSelection");
+      //for (var i = 0; i <= dropDown.options.length; i++) {
+      //  if (dropDown.options[i].selected) {
+      //    this.set('devicePort', port);
+      //    dropDown.removeChild(dropDown.options[i]);
+      //  }
+      //}
     }
+
+    //onReset: function () {
+    //  // this.set('device.nme', '');
+    //  this.set('device.grp', '');
+    //  this.set('device.devicePort', '');
+    //}
   }
 });
