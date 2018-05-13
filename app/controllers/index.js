@@ -49,6 +49,8 @@ export default Ember.Controller.extend({
                     }
                 }).catch(function (error) {
                     // handle errors here
+                    loginMsgElem.css('background-color', '#e15848');
+                    loginMsgElem.html("Application Server Error").show();
                 });
             } else {
                 //Show password or username empty message
