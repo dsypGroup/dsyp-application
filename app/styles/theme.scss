@@ -147,19 +147,19 @@ strong {
   color: #fcd116;
   text-decoration: none;
 }
-.menu a:active{
-  color: #000 ;
-  background: red;
-}
-
-.menu a:active:after{
-  background: white;
-}
-
-.menu a:focus{
-  color: #000;
-  background: green;
-}
+//.menu a:active{
+//  color: #000 ;
+//  background: red;
+//}
+//
+//.menu a:active:after{
+//  background: white;
+//}
+//
+//.menu a:focus{
+//  color: #000;
+//  background: green;
+//}
 
 .dropdown {
   display: inline-block;
@@ -1659,7 +1659,7 @@ tr {
   color: #a4a4a4;
   a {
     text-decoration: none;
-    color: #a4a4a4;
+    color: #a4a4a4 !important;
   }
   a:hover {
     color: #ffc223;
@@ -2082,6 +2082,9 @@ label {
   float: right;
 }
 
+.current{
+  color: #fcd116 !important;
+}
 
 
 
