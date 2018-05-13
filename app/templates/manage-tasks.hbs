@@ -104,12 +104,11 @@
                                       </tr>
                               {{/each}}
                               <tr>
-                                  <td class="col-xs-4 col-sm-4 col-md-6 col-lg-4 connected-devices"></td>
-                                  <td class="col-xs-4 col-sm-4 col-md-4 col-lg-4 connected-devices"></td>
-                                  <td class="col-xs-4 col-sm-4 col-md-4 col-lg-4 connected-devices">{{totalBill}}</td>
+                                   <td class="col-xs-6 col-sm-6 col-md-6 col-lg-6"><button type="submit" class="btn-default" {{action "showTotal" model}}>Total</button></td>
+                                   <td class="col-xs-6 col-sm-6 col-md-6 col-lg-6 connected-devices">{{totalBill}}</td>
                               </tr>
                               {{else}}
-                                <div></div>
+                                <div>Click "Calculate Bill" button for get more details</div>
                             {{/if}}
                           </table>
                           </div>

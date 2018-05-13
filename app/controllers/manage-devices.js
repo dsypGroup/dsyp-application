@@ -46,6 +46,14 @@ export default Ember.Controller.extend({
       remove.destroyRecord().then(function(respons) {
         console.log('Response' + respons);
       });
+    },
+
+    onResetBtnClicked: function (device){
+      //send a request to the server to remove the specific device and update the according data store
+      var reset = this.get('model').findBy('id', device.id);
+
+      reset.set('deviceUnits', 0);
+      reset.save();
     }
   }
 });
