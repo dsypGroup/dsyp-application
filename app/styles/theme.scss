@@ -151,6 +151,15 @@ strong {
   background: red;
 }
 
+.menu a:active:after{
+  background: white;
+}
+
+.menu a:focus{
+  color: #000;
+  background: green;
+}
+
 .dropdown {
   display: inline-block;
   color: #d4d4d4;
@@ -2068,7 +2077,9 @@ label {
   font-weight: bold;
 }
 
-
+.right{
+  float: right;
+}
 
 
 

@@ -3,7 +3,7 @@
  */
 import Ember from 'ember';
 
-export function calculate(units) {
+export function calculate(units, bool) {
     var charge_00 = 7.85;
     var charge_60 = 10;
     var charge_90 = 27.75;

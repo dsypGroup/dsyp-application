@@ -133,6 +133,17 @@ export default Ember.Controller.extend({
           //checkBillArea.style.display = "none";
           this.set('isCheckBillClicked', false);
         }
+      },
+
+      showTotal: function (model) {
+        var total = 0;
+        var model = model;
+
+        for (var i=0; i<model.content.length; i++) {
+          total = total + this.calculateDevPerBill(model.content[i].__data.deviceUnits);
+        }
+
+        this.set('totalBill', total);
       }
     }
 });
