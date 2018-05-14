@@ -6,6 +6,8 @@ export default Ember.Controller.extend({
     isSignUpClicked: false,
     isAuthenticated: false,
     isHomeViewEnabled: false,
+    isSignUpEnabled: false,
+
     user: '',
 
     model: {},
@@ -63,6 +65,14 @@ export default Ember.Controller.extend({
         logOutBtnActionPerformed: function () {
             this.set('isAuthenticated', false);
             this.set('isHomeViewEnabled', false);
+        },
+
+        showSignUp: function () {
+            this.set('isSignUpEnabled', true);
+        },
+
+        setSignUp: function (evt) {
+            this.set('isSignUpEnabled', false)
         }
     }
 });
