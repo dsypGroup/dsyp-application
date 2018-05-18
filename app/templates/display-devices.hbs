@@ -37,9 +37,11 @@
                                         <div class="layout-col h-right bold">{{device.unitLimit}}</div>
                                     </div>
 
-                                    <div class="layout-container full-width pad-s-tb">
-                                        <div class="layout-col">Used Units</div>
-                                        <div class="layout-col h-right bold">{{formatDeviceUnits device.deviceUnits}}</div>
+                                    <div class={{isDeviceLimitExceeded device.deviceUnits device.unitLimit}}>
+                                        <div class="layout-container full-width pad-s-tb">
+                                            <div class="layout-col">Used Units</div>
+                                            <div class="layout-col h-right bold">{{formatDeviceUnits device.deviceUnits}}</div>
+                                        </div>
                                     </div>
 
                                     <div class="layout-container full-width pad-s-tb">
@@ -80,9 +82,11 @@
                                         <div class="layout-col h-right bold">{{device.unitLimit}}</div>
                                     </div>
 
-                                    <div class="layout-container full-width pad-s-tb">
-                                        <div class="layout-col">Used Units</div>
-                                        <div class="layout-col h-right bold">{{formatDeviceUnits device.deviceUnits}}</div>
+                                    <div class={{isDeviceLimitExceeded device.deviceUnits device.unitLimit}}>
+                                        <div class="layout-container full-width pad-s-tb">
+                                            <div class="layout-col">Used Units</div>
+                                            <div class="layout-col h-right bold">{{formatDeviceUnits device.deviceUnits}}</div>
+                                        </div>
                                     </div>
 
                                     <div class="layout-container full-width pad-s-tb">
