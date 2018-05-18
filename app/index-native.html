@@ -6,14 +6,13 @@
     <title>HomationApp</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    {{content-for "head"}}
+    <base href="/" />
+    <meta name="homation-app/config/environment" content="{{META-CONTENT}}" />
 
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
-    <link integrity="" rel="stylesheet" href="{{rootURL}}assets/vendor.css">
-    <link integrity="" rel="stylesheet" href="{{rootURL}}assets/homation-app.css">
+    <link integrity="" rel="stylesheet" href="{{rootURL}}assets/vendor-{{TIMESTAMP}}.css">
+    <link integrity="" rel="stylesheet" href="{{rootURL}}assets/homation-app-{{TIMESTAMP}}.css">
 
-    {{content-for "head-footer"}}
 
     <style>
       body {
@@ -32,9 +31,9 @@
         newScript.type = "text/javascript";
 
         if (appNavigator.indexOf('Mac OS') < 0 && appNavigator.indexOf('iPhone') < 0) {
-          newScript.src = "assets/cordova/android/cordova.js";
+          newScript.src = "assets/cordova/android/cordova-{{TIMESTAMP}}.js";
         } else {
-          newScript.src = "assets/cordova/ios/cordova.js";
+          newScript.src = "assets/cordova/ios/cordova-{{TIMESTAMP}}.js";
         }
 
         document.head.appendChild(newScript);
@@ -42,11 +41,10 @@
     </script>
   </head>
   <body onload="initializeCordova()">
-    {{content-for "body"}}
 
-    <script src="{{rootURL}}assets/vendor.js"></script>
-    <script src="{{rootURL}}assets/homation-app.js"></script>
+    <script src="{{rootURL}}assets/vendor-{{TIMESTAMP}}.js"></script>
+    <script src="{{rootURL}}assets/homation-app-{{TIMESTAMP}}.js"></script>
 
-    {{content-for "body-footer"}}
+
   </body>
 </html>
